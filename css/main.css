@@ -1,0 +1,382 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "BebasNeue";
+  src: url(Fonts/BebasNeue.otf);
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif; }
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url(Fonts/Montserrat-Light.otf);
+  font-family: 'Source Sans Pro', sans-serif; }
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(Fonts/Montserrat-Regular.otf);
+  font-family: 'Source Sans Pro', sans-serif; }
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+header {
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+  top: 0%;
+  height: auto;
+  display: flex;
+  align-content: center;
+  justify-content: center; }
+
+header img {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  z-index: -1; }
+
+header img:nth-of-type(5) {
+  width: 30%;
+  height: auto;
+  margin-top: 10%; }
+
+ul {
+  /*position: fixed;*/
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.250rem;
+  letter-spacing: 0.2em;
+  display: flex;
+  justify-content: center; }
+
+ul a {
+  display: inline;
+  padding: 16px;
+  padding-right: 0 !important;
+  /* important skriver ├Âver media queries */
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+  display: inline; }
+
+ul a:hover {
+  text-color: grey;
+  transition: 0.2s;
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.2em;
+  display: inline; }
+
+.all-section {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: relative;
+  margin-top: 55%;
+  margin-bottom: 50px;
+  display: table cell; }
+
+.section-work {
+  /*height: 350px;*/
+  width: 100%;
+  max-height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  /*margin-top: 15px;*/
+  display: flex;
+  flex-direction: column;
+  /*display: table;*/ }
+
+.section-work img {
+  max-width: 100%;
+  height: auto;
+  background-size: contain;
+  border-radius: 2%; }
+
+h2 {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+  font-family: BebasNeue, sans-serif;
+  text-decoration: none;
+  color: #000;
+  text-align: center; }
+
+h3 {
+  font-family: BebasNeue;
+  font-size: 24px;
+  letter-spacing: 2px; }
+
+.content-container {
+  height: 100%;
+  width: auto;
+  margin-top: 0%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column; }
+
+.text-container {
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: center; }
+
+.text-container2 {
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: center; }
+
+.p-heading {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: bold; }
+
+.p-content {
+  font-family: "Montserrat-Light";
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1.5rem; }
+
+.img-container {
+  width: 100%;
+  height: auto; }
+
+.img-container2 {
+  width: 100%;
+  height: auto; }
+
+.section-about {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  /*margin-top: 15px;*/
+  display: flex;
+  flex-direction: column;
+  display: table;
+  text-align: center; }
+
+.about-ingress {
+  font-family: BebasNeue;
+  font-size: 24px;
+  color: #ffc935; }
+
+.section-workers {
+  position: relative;
+  background-color: black;
+  border-radius: 2%;
+  max-height: auto;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 10px; }
+
+.info-workers1 {
+  display: flex;
+  flex-direction: column; }
+
+.info-workers2 {
+  display: flex;
+  flex-direction: column; }
+
+.workers-text {
+  margin: 2rem;
+  color: lightgrey;
+  text-transform: uppercase; }
+
+.email {
+  color: #ffc935;
+  text-transform: lowercase; }
+
+.section-contact {
+  /*height: 350px;*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  /*margin-top: 15px;*/
+  display: flex;
+  flex-direction: column;
+  display: table;
+  background-color: lightgrey;
+  width: 100%;
+  max-height: auto; }
+
+.contact-text {
+  width: 49%;
+  height: auto;
+  float: right;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.section-contact img {
+  max-width: 100%;
+  height: auto;
+  background-size: contain; }
+
+.contact-img {
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  width: 30%;
+  height: 100%;
+  float: left; }
+
+h4 {
+  font-family: "BebasNeue";
+  font-size: 24px;
+  color: #000;
+  letter-spacing: 2px; }
+
+@keyframes FadeInOut {
+  0% {
+    opacity: 1; }
+  17% {
+    opacity: 0; }
+  34% {
+    opacity: 0; }
+  51% {
+    opacity: 0; }
+  68% {
+    opacity: 0; }
+  85% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
+header img {
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out; }
+
+header img:nth-of-type(1) {
+  -webkit-animation-name: FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-direction: normal;
+  -webkit-animation-delay: 60s;
+  -moz-animation-name: FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 60s;
+  -moz-animation-direction: normal;
+  -moz-animation-delay: 60s;
+  -o-animation-name: FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 60s;
+  -o-animation-direction: normal;
+  -o-animation-delay: 60s; }
+
+header img:nth-of-type(2) {
+  -webkit-animation-name: FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-direction: normal;
+  -webkit-animation-delay: 50s;
+  -moz-animation-name: FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 60s;
+  -moz-animation-direction: normal;
+  -moz-animation-delay: 50s;
+  -o-animation-name: FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 60s;
+  -o-animation-direction: normal;
+  -o-animation-delay: 50s; }
+
+header img:nth-of-type(3) {
+  -webkit-animation-name: FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-direction: normal;
+  -webkit-animation-delay: 40s;
+  -moz-animation-name: FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 60s;
+  -moz-animation-direction: normal;
+  -moz-animation-delay: 40s;
+  -o-animation-name: FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 60s;
+  -o-animation-direction: normal;
+  -o-animation-delay: 40s; }
+
+header img:nth-of-type(4) {
+  -webkit-animation-name: FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-direction: normal;
+  -webkit-animation-delay: 30s;
+  -moz-animation-name: FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 60s;
+  -moz-animation-direction: normal;
+  -moz-animation-delay: 30s;
+  -o-animation-name: FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 60s;
+  -o-animation-direction: normal;
+  -o-animation-delay: 30s; }
+
+@media screen and (min-width: 768px) {
+  .content-container {
+    display: table;
+    margin-top: 0%; }
+
+  .section-work {
+    display: table; }
+
+  .text-container {
+    float: right;
+    width: 49%; }
+
+  .text-container2 {
+    float: left;
+    width: 49%; }
+
+  .img-container {
+    float: left;
+    width: 50%; }
+
+  .img-container2 {
+    float: right;
+    width: 50%; }
+
+  ul a {
+    font-size: 20px;
+    text-align: center; }
+
+  .info-workers1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+
+  .info-workers2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; } }
+
+/*# sourceMappingURL=main.css.map */

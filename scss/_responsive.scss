@@ -1,3 +1,150 @@
+//MEDIA QUERIES
+
+@media screen and (max-width: 767px){
+
+   .ul-navigation {
+       display: none;
+   }
+   
+   
+   .ul-navigation a{
+       color: white;
+       font-size: 1.125rem;       
+   }
+
+
+   .hamburgler-icon-wrapper {
+        z-index: 99;
+        position: fixed;
+   }
+
+   .hamburgler-menu-list a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat Regular", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.250rem;
+    letter-spacing: 0.2em;
+   }
+
+   .hamburgler-menu-list a:hover {
+    display: inline;
+    text-color: grey;
+    transition: 0.2s;
+    letter-spacing: 0.4em;
+    }
+    .hamburgler-menu {
+    @include transition(all 0.4s ease);
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: $color-yellow;
+    text-align: center;
+    z-index: 99;
+    height: 50%;
+}
+
+.hamburgler-active .hamburgler-menu {
+    opacity: 1;
+    pointer-events: initial;
+}
+}  
+
+
+@media screen and (min-width: 768px) {
+
+    body {
+        font-size: 90%;
+    }
+    
+   .content-container {
+        display: table;
+    }
+
+    .section-work {
+        display: table;
+    }
+    
+
+    .text-container {
+        float: right;
+        width: 49%;
+    }
+
+    .text-container2 {
+        float: left;
+        width: 49%;
+
+    }
+
+    .img-container {
+        float: left;
+        width: 50%;
+    }
+
+    .img-container2 {
+        float: right;
+        width: 50%;
+    }
+
+
+    .info-workers1, .info-workers2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+}
+
+    .hamburgler-menu {
+        display: none;
+        cursor: none;
+    }
+    .hamburgler-icon {
+        display: none;
+   
+    }
+    .hamburgler-icon-wrapper{
+        cursor: default;
+    }
+
+    .section-contact {
+        flex-direction: row;
+
+    }
+
+    .contact-text {
+        width: 49%;
+        height: auto;
+        float: right;
+    }
+
+    .contact-img {
+        width: 40%;
+    }
+
+
+    .form{
+        position: absolute;
+        width: 50%;
+        left: 30%;
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 100%;
+    }
+
+}
+
 
 
 

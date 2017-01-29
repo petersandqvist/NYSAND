@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <title>SAND</title>
@@ -6,26 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <div id="startlink"></div>
+    <div class="hamburgler-menu">
+    <ul class="hamburgler-menu-list">
+                <li><a href="#startlink">Start</a></li>
+                <li><a href="#worklink">Work</a></li>
+                <li><a href="#aboutlink">About</a></li>
+                <li><a href="#contactlink">Contact</a></li>
+    </ul>
+    </div>
+
+    <div id="hamburgler" class="hamburgler-icon-wrapper">
+        <span class="hamburgler-icon"></span>
+    </div>
     <!-- header -->
     <header>
         <!--background img -->
-        <img src="img/color_1920.jpg">
-        <img src="img/jack_1920.jpg">   <!--lagt till resterande bilder-->
-        <img src="img/sport_1920.jpg">
-        <img src="img/volvo_1920.jpg">
-        <img src="img/SAND_logga.svg">
-
+        
+        <img src="img/color_1920.jpg" alt="color">
+        <img src="img/jack_1920.jpg" alt="jack"> 
+        <img src="img/sport_1920.jpg" alt="sport">
+        <img src="img/ocean_1920.jpg" alt="ocean">
+        <img src="img/SAND_LOGO_NY.svg" alt="logga">
+        
         <!-- navigation -->
         <nav>
-            <ul>
-                <li><a href="index.html">Start</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <ul class="ul-navigation">
+                <li><a href="#startlink">Start</a></li>
+                <li><a href="#worklink">Work</a></li>
+                <li><a href="#aboutlink">About</a></li>
+                <li><a href="#contactlink">Contact</a></li>
             </ul>
         </nav>
 
@@ -34,92 +50,144 @@
     <!-- CONTENT SECTION FOR SETTING WIDTH FOR WHOLE PAGE -->
     <section class="all-section">
         <!--- WORK SECTION -->
-        <h2>work</h2>
+        <h2 id="worklink">work</h2>
+        <div class="paus"></div>
         <section class="section-work">
             <!--olympiaden project-->
             <div class="content-container">
                 <div class="text-container">
-                    <h3>olympiaden</h3>
-                    <p class="p-heading">OLYMPIADEN: COMMERCIAL/WEBSITE:</p>
-                    <p class="p-content">Olympiaden is a Swedish fashion store that are marketing and focusing on selling gym clothes. Founded in 2010 and are passionate about helping their customers navigate through a variety of designers. Our contribute was to make a redesign of their website and filming and directing their new TV-commercial.</p>
+                    <h3 class="color-sport">olympiaden</h3>
+                    <p class="p-heading">COMMERCIAL/WEBSITE</p>
+                    <p class="p-content">Olympiaden is a Swedish fashion store that is marketing and focusing on selling gym clothes. Founded in 2010 and are passionate about helping their customers navigate through a variety of designers. Our contribute was to make a redesign of their website and filming and directing their new TV-commercial.</p>
                 </div>
-                <div class="img-container"><img src="img/sport_1920.jpg" /></div>
+                <!--Div:ar för hover effekt -->               
+                <div class="img-container"><div class="hovereffect"><img src="img/sport_1920.jpg" alt="sport"/><div class="overlay">
+                    <h2>olympiaden</h2>
+                <p> 
+                    <a href="#">View Project</a>
+                </p>
+                </div> 
+                </div>
+                </div>
             </div>
             <!--eyesight project-->
             <div class="content-container">
             
                 <div class="text-container2">
-                    <h3>eyesight</h3>
-                    <p class="p-heading">EYESIGHT: COMMERCIAL:</p>
+                    <h3 class="color-eye">eyesight</h3>
+                    <p class="p-heading">COMMERCIAL</p>
                     <p class="p-content">50 years ago eyesight opened up their first store, today the company consists of over 100 stores all over Sweden which makes them one of the leading companies in optics. Their goal is to provide quality optics that everyone can afford. We signed up to be a part of their new commercial that we helped shoot and edit.</p>
                 </div>
-                <div class="img-container2"><img src="img/jack_1920.jpg" /></div>
+                <div class="img-container2"><div class="hovereffect"><img src="img/jack_1920.jpg" alt="jack"/><div class="overlay">
+                <h2>eyesight</h2>
+                <p> 
+                    <a href="#">View Project</a>
+                </p>
+                </div> 
+                </div>
+                </div>
             </div>
             <!--volvo project -->
             <div class="content-container">
                 <div class="text-container">
-                    <h3>volvo</h3>
-                    <p class="p-heading">CARPOOLING: COMMERCIAL/WEBSITE:</p>
-                    <p class="p-content">A recently new start company that opens up the world of carpooling through the simplicity of an app. We signed up to help them get started with a information website and a tv-commercial</p>
+                    <h3 class="color-ocean">ocean</h3>
+                    <p class="p-heading"> COMMERCIAL/WEBSITE</p>
+                    <p class="p-content">A recently new started company that opens up the world of traveling through the simplicity of an app. We signed up to help them get started with a information website and a tv-commercial.</p>
                 </div>
-                <div class="img-container"><img src="img/volvo_1920.jpg" /></div>
+                <div class="img-container"><div class="hovereffect"><img src="img/ocean_1920.jpg" alt="ocean"/><div class="overlay">
+                <h2>ocean</h2>
+                <p> 
+                    <a href="#">View Project</a>
+                </p>
+                </div> 
+                </div>
+                </div>
             </div>
             <!--färg project -->
-            <div class="content-container">
-            
+            <div class="content-container">           
                 <div class="text-container2">
-                    <h3>färgkollektivet</h3>
-                    <p class="p-heading">FÄRGKOLLEKTIVET: MARKETING/FILM:</p>
+                    <h3 class="col-color">färgkollektivet</h3>
+                    <p class="p-heading">MARKETING/FILM</p>
                     <p class="p-content">New Stockholm club venture. Rooted in a desire to explore the future of contemporary Swedish culture wanting to promote culture and acts as a modern patron of the arts. Färgkollektivet needed a new marketing film to be able to spread their ideas and venture, which we gladly signed up to be part of.</p>
                 </div>
-                <div class="img-container2"><img src="img/color_1920.jpg" /></div>
+                <div class="img-container2"><div class="hovereffect"><img src="img/color_1920.jpg" alt="color"/><div class="overlay">
+                <h2>färgkollektivet</h2>
+                <p> 
+                    <a href="#">View Project</a>
+                </p>
+                </div> 
+                </div>
+                </div>
             </div>
         </section>
         <!-- ABOUT SECTION -->
-        <h2>about us</h2>
-        <section class="section-about">
+        <h2 id ="aboutlink">about us</h2>
+        <section class="section-about"><h6>tvungen ha en heading</h6>
             <p class="about-ingress">we create design with meaning. great design speaks to your head and your heart. it makes you feel differently, it makes you remember and respond.</p>
-            <p class="p-content">That's what we aim for: to go from insight to ideas to design that connects. To craft things with intelligence, sensitivity and precision.</br>
-                It doesn't happen in isolation. that's why we work collaboratively with our clients and with each other. As an international collective, we take a global outlook. We're open. We share. We learn.</br>
+            <p class="p-content">That's what we aim for: to go from insight to ideas to design that connects. To craft things with intelligence, sensitivity and precision.<br/>
+                It doesn't happen in isolation. that's why we work collaboratively with our clients and with each other. As an international collective, we take a global outlook. We're open. We share. We learn.<br/>
                 The result. Intelligent, effective design that makes a lasting impression</p>
 
-                <!--lagt till info om företaget-->
-                <p class="p-content">We are an advertising agency that offers our clients customized creative solutions through film, photo, branding and digital marketing on the web</p>
-                <!--lagt till info om oss -->
+                <!--Info om företaget-->
+                <p class="p-content">We are an advertising agency that offers our clients customized creative solutions through film, photo, branding and digital marketing on the web. We cooperate with some of the biggest companies but also smaller ones. The one thing our clients have in common is that if we do not sell their products or services, we fail. Therefore, we never give up.</p>
+                <p class="p-content">We like communicative problems. But above all we like smart solutions. Creative, original, unexpected solutions that make people say: ”I know it is advertising but it is so god damn good that it doesn’t matter.” We maintain a close cooperation with our clients throughout the entire process of creating something great, all the way from the strategic start-up to the creative solution. That is the key for successful communication. </p>
+
+                <!--Info om oss -->
                 <div class="section-workers">
                     <div class="info-workers1">
                         <div class="workers-text">
-                            <p>CEO</br></p><p>peter sandqvist</br></p><p class="email">peter@sand.se</br></p>
+                            <p>peter sandqvist<br/></p><p>ceo<br/></p><p class="email">peter@sand.se<br/></p>
                         </div>
                         <div class="workers-text">
-                            <p>designer</br></p><p>evelina sundin</br></p><p class="email">evelina@sand.se</br></p>
+                            <p>evelina sundin<br/></p><p>designer<br/></p><p class="email">evelina@sand.se<br/></p>
                         </div>
                     </div>
                     <div class="info-workers2">
                         <div class="workers-text">
-                            <p>project manager</br></p><p>anna hallgren</br></p><p class="email">anna@sand.se</br></p>
+                            <p>anna hallgren<br/></p><p>project manager<br/></p><p class="email">anna@sand.se<br/></p>
                         </div>
                         <div class="workers-text">
-                            <p>front-end developer</br></p><p>kevin larsson</br></p><p class="email">kevin@sand.se</br></p>
+                            <p>kevin larsson<br/></p><p>front end developer<br/></p><p class="email">kevin@sand.se<br/></p>
                         </div>
                     </div>
                 </div>
         </section>
         <!-- CONTACT SECTION -->
-        <h2>contact</h2>
+        <h2 id="contactlink">contact</h2>
         <section class="section-contact">
+        <div class="contact-img"><img src="img/map_pic.png" alt="map"><div class="map-icon"><img src="img/map_icon.svg" alt="mapicon"></div></div>
             <div class="contact-text">
                 <h4>SAND</h4>
-                <p class="p-content">Sandgatan 101 </br> 11635 Stockholm Sweden </br> 08-391673
-                    </br> info@sand.se</p>
+                <p class="p-content">Sandgatan 101 <br/> 11635 Stockholm Sweden <br/> 08-391673
+                    <br/> info@sand.se</p>
                 <p class="p-content"> Hope to hear from you!</p>
             </div>
-            <div class="contact-img"><img src="img/map_pic.png"></div>
         </section>
     </section>
     <!-- closing all section -->
 
+    <!--footer section -->
+    <footer class ="section-footer">
+    <div class="footer-links">
+        
+    <a href="https://www.facebook.com"> <img src="img/facebook.svg" alt="facebook"></a>
+    <a href="https://www.twitter.com"> <img src="img/twitter.svg" alt="twitter"></a>
+    <a href="https://www.github.com"> <img src="img/github.svg" alt="git"></a>
+    <a href="https://www.instagram.com"> <img src="img/instagram.svg" alt="insta"></a>
+    
+    </div>  
+    <div class="form">
+        <input type="email" value name="email" id="email" placeholder="Join us!" required>
+        
+        <input type="submit" id="submit">
+</div>
+    <div class="fotsand">©SAND 2017</div>
+    </footer>
+
+
+<script src="js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>
+</html>
 
 
-<!--bytte plats på img varannan content container -->

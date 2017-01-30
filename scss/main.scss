@@ -31,23 +31,22 @@ $color-sand: #BCA78A;
 //FONTS 
 
 @font-face {
-    font-family: 'bebasneue';
-    src: url('../fonts/bebasneue.otf');
-    text-transform: uppercase;
+    font-family: "bebasneue";
+    src: url(../fonts/bebasneue.otf);
     
 }
 
 
 
 @font-face {
-    font-family: 'Montserrat Light';
-    src: url('../fonts/Montserrat-Light.otf');
+    font-family: "Montserrat Light";
+    src: url(../fonts/Montserrat-Light.otf);
 
 }
 
 @font-face {
-    font-family: 'Montserrat Regular';
-    src: url('../fonts/Montserrat-Regular.otf');
+    font-family: "Montserrat Regular";
+    src: url(../fonts/Montserrat-Regular.otf);
 
 }
 
@@ -70,7 +69,6 @@ body {
     left: 1em;
     height: 1.625rem;
     width: 1.625rem;
-    cursor: pointer;
 }
 
 .hamburgler-icon,
@@ -123,7 +121,6 @@ body {
 .hamburgler-menu {
     @include transition(all 0.4s ease);
     opacity: 0;
-    pointer-events: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -138,7 +135,6 @@ body {
 
 .hamburgler-active .hamburgler-menu {
     opacity: 1;
-    pointer-events: initial;
 }
 
 .hamburgler-menu-list {
@@ -193,7 +189,6 @@ nav {
     left: 0;
     z-index: 80;
     background-color: rgba(0, 0, 0, 0.6); 
-    opacity: 100%;
 }
 
 
@@ -224,7 +219,6 @@ nav {
 
 
 .ul-navigation a:hover {
-    text-color: grey;
     color: white;
     transition: 0.2s;
     letter-spacing: 0.3em;
@@ -295,7 +289,7 @@ header img:nth-of-type(4) {
     width: 90%;
     margin: 60% 5% 3.125rem 5%;
     position: relative;
-    display: table cell; // table gör att section-elementen lägger sig på rad
+    display: table; // table gör att section-elementen lägger sig på rad tait bort table cell
 }
 
 //WORK SECTION 
@@ -304,7 +298,7 @@ header img:nth-of-type(4) {
 .section-work {  
     position: relative;  
     width: 100%;    
-    max-height: auto;
+  
     margin: 0.625rem 0 0.625rem 0;
     display: flex;
     flex-direction: column;
@@ -367,14 +361,12 @@ h3 {
     flex-direction: column;
 }
 
-.text-container {
-    max-width: auto;       
+.text-container {    
     height: 100%;
     text-align: center;
 
 }
-.text-container2 {
-    max-width: auto;         
+.text-container2 {       
     height: 100%;
     text-align: center;
 
@@ -396,12 +388,10 @@ h3 {
 }
 
 .img-container {
-    max-width: auto;
     height: 100%;
 }
 
 .img-container2 {
-    max-width: auto;
     height: 100%;
 }
 
@@ -413,7 +403,7 @@ h3 {
 
 .hovereffect {
   width: 100%;
-  height: auto;  //bytte från 100%
+  height: auto;  
   float: left;
   overflow: hidden;
   position: relative;
@@ -426,7 +416,7 @@ h3 {
 .hovereffect .overlay {
   position: absolute;
   width: 100%;
-  height: auto; //bytte från 100%
+  height: auto; 
   overflow: hidden;
   top: 0;
   left: 0;
@@ -520,8 +510,8 @@ h3 {
   filter: alpha(opacity=0);
   transition: opacity 0.35s, transform 0.35s;
   -ms-transition: opacity 0.35s, transform 0.35s;
-  transform: translate(100%,0);                 //ändrade för att det ska fungera i explorer också
-  -ms-transform: translate(100%,0);             //ändrade för att det ska fungera i explorer också
+  transform: translate(100%,0);                 
+  -ms-transform: translate(100%,0);             
 }
 
 .hovereffect:hover a, .hovereffect:hover p {
@@ -583,7 +573,6 @@ h6 {    //la till denna, annars blir det warning när man validerar
 .section-workers {
     position: relative;
     @include border-radius(10px);
-    max-height: auto;
     width: 80%;
     display: inline-block;
     margin: 1.250rem 0 0.625rem 0;
@@ -624,7 +613,7 @@ h6 {    //la till denna, annars blir det warning när man validerar
     margin: 0.625rem 0 0.625rem 0;
     position: relative;
     display: table;
-    background-color: lightgrey;
+    background-color: lightgray; //ändrat
     width: 100%;
 }
 
@@ -730,8 +719,7 @@ div.map-icon {
     padding: 0.625rem;
     display: inline;
     float: right; 
-    height: 100%;
-    max-width: auto;          
+    height: 100%;        
 }
 
 
@@ -757,9 +745,9 @@ div.map-icon {
 #email {
     border: none;
     padding: 0.750em 1.250em 0.813em;
-    background: lightgrey;
+    background: lightgray; 
     font-size: 24px;
-    color: #011931;
+    color: #011931; 
     height: auto;
     display: inline;
     cursor: text;

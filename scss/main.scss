@@ -1,326 +1,256 @@
+//VARIABLER
+
+$color-yellow: #ffc935;
+$color-olympiaden: #83D1B7;
+$color-eyesight: #ffbe32;
+$color-ocean: #4286f4;
+$color-colcompany: #DD524D;
+$color-sand: #BCA78A;
+
+
+//MIXINS
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+@mixin transform($transform){
+    transform: $transform;
+     -ms-transform: $transform;
+}
+
+@mixin transition($transition) {
+     transition: $transition;
+    -ms-transition: $transition;
+}
+
 //FONTS 
+
 @font-face {
-    font-family: "BebasNeue";
-    src: url(Fonts/BebasNeue.otf);
+    font-family: 'bebasneue';
+    src: url('../fonts/bebasneue.otf');
     text-transform: uppercase;
-    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+
+
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url('../fonts/Montserrat-Light.otf');
+
 }
 
 @font-face {
-    font-family: "Montserrat-Light";
-    src: url(Fonts/Montserrat-Light.otf);
-    font-family: 'Source Sans Pro', sans-serif;
-}
+    font-family: 'Montserrat Regular';
+    src: url('../fonts/Montserrat-Regular.otf');
 
-@font-face {
-    font-family: "Montserrat-Regular";
-    src: url(Fonts/Montserrat-Regular.otf);
-    font-family: 'Source Sans Pro', sans-serif;
 }
 
 //BODY
+
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 100%;
+    overflow-x: hidden; 
 }
 
+//HAMBURGER MENU
 
+.hamburgler-icon-wrapper {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    height: 1.625rem;
+    width: 1.625rem;
+    cursor: pointer;
+}
+
+.hamburgler-icon,
+.hamburgler-icon:before,
+.hamburgler-icon:after {
+    content: '';
+    position: absolute;
+    border-radius: 1em;
+    height: 0.125rem;
+    width: 1.625rem;
+    background: $color-yellow;
+    @include transition(all 0.2s ease);
+}
+
+.hamburgler-icon {
+    top: 0.75em;
+}
+
+.hamburgler-icon:before {
+    top: -0.55em;
+}
+
+.hamburgler-icon:after {
+    top: 0.55em;
+}
+
+.hamburgler-active .hamburgler-icon {
+    background: transparent;
+    @include transform(rotate(-135deg));
+
+}
+
+.hamburgler-active .hamburgler-icon:before,
+.hamburgler-active .hamburgler-icon:after {
+    top: 0;
+}
+
+.hamburgler-active .hamburgler-icon:before {
+    @include transform(rotate(90deg));
+
+}
+
+.hamburgler-active .hamburgler-icon,
+.hamburgler-active .hamburgler-icon:before,
+.hamburgler-active .hamburgler-icon:after {
+    background: white;
+
+}
+
+.hamburgler-menu {
+    @include transition(all 0.4s ease);
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: $color-yellow;
+    text-align: center;
+    z-index: 99;
+    height: 50%;
+}
+
+.hamburgler-active .hamburgler-menu {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.hamburgler-menu-list {
+    display: block;
+    transition: all 0.4s ease;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    @include transform(translate(-50%, -50%) scale(1.2));
+}
+
+.hamburgler-active .hamburgler-menu-list {
+    @include transform(translate(-50%, -50%) scale(1));
+}
 
 //HEADER SECTION 
 header {
-    margin: 0 auto;
-    max-width: 100%;
-    position: relative;         //bytt till relative
-    top: 0%;
-    height: auto;              //bytt från vh till auto för att undvika space mellan header och all-section vid responsive         
+    position: relative;
+    width: 100%;                             
     display: flex;
-    align-content: center;
-    justify-content: center;
 }
 
 header img {
     position: absolute;
-    max-width: 100%;
+    width: 100%; 
     height: auto;
-    border: 0;
-    z-index: -1;
+    left: 0;             
 }
 
 
-//storlek och placering på logga - la till
-header img:nth-of-type(5){
-    width: 30%;
-    height: auto;
-    margin-top: 10%;
+//LOGO - SIZE AND POSITION
+header img:nth-of-type(5){           
+   position: absolute;
+   width: 40%;
+   height: auto;
+   top: 50%;
+   left: 50%;
+   margin-top: 18%;
+   margin-left: -18%;
+   z-index: 60;
+
 }
 
-ul {
-    /*position: fixed;*/    //ändrade till fixed men då har navigationen hamnat åt sidan
+
+//BOX FOR KEEPING NAV FIXED AND IN THE MIDDLE
+nav {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    left: 0;
+    z-index: 80;
+    background-color: rgba(0, 0, 0, 0.6); 
+    opacity: 100%;
+}
+
+
+
+
+.ul-navigation {
     list-style: none;
     text-decoration: none;
     color: white;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat Regular", sans-serif;
     text-transform: uppercase;
-    text-align: center;
     font-size: 1.250rem;
     letter-spacing: 0.2em;
     display: flex;
     justify-content: center;
 }
 
-ul a {
-    display: inline;
-    padding: 16px;
+.ul-navigation a {
+    padding: 1rem;
     padding-right: 0 !important;
     /* important skriver över media queries */
-    font-size: 12px;        //ändrade från 17px till till 12px i mobile
     font-weight: bold;
-    text-align: center;
-    color: black;
+    color: white;
     cursor: pointer;
     text-decoration: none;
     transition: 0.2s;
-    display: inline;
 }
 
-ul a:hover {
+
+.ul-navigation a:hover {
     text-color: grey;
-    transition: 0.2s;
-    text-decoration: none;
     color: white;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 0.2em;
-    display: inline;
+    transition: 0.2s;
+    letter-spacing: 0.3em;
 }
 
 
 
-//ALL SECTION
-
-.all-section {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    position: relative;
-    margin-top: 55%;        //bytte från 10px till 55% för att bli av med space mellan header och all-section
-    margin-bottom: 50px; //margin efter contact section
-    display: table cell; // table gör att section-elementen lägger sig på rad
-}
-
-//WORK SECTION 
-
-.section-work {
-    /*height: 350px;*/    
-    width: 100%;        //lagt till
-    max-height: auto;   //lagt till
-    margin-top: 10px;  
-    margin-bottom: 10px;
-    position: relative;
-    /*margin-top: 15px;*/
-    display: flex;
-    flex-direction: column;
-    /*display: table;*/ //ursprunglig
-}
-
-.section-work img {
-    max-width: 100%;
-    height: auto;
-    background-size: contain;
-    border-radius: 2%; //lagt till
-}
-
-h2 {
-    position: relative;
-    text-align: center;
-    font-size: 40px;
-    letter-spacing: 2px;
-    font-family: BebasNeue, sans-serif;
-    text-decoration: none;
-    color: #000;
-    text-align: center;
-}
-
-h3 {
-    font-family: BebasNeue;
-    font-size: 24px;
-    letter-spacing: 2px;
-}
-
-.content-container {
-    height: 100%; // = bytte från 350px till 100% så att content-container inte ligger på varandra i mobile
-    width: auto; //lagt till
-    margin-top: 0%;         //bytte från 10px till 0%
-    margin-bottom: 10px;
-    display: flex; //lagt till 
-    flex-direction: column; //lagt till*/
-}
-
-.text-container {
-    width: 100%;         //bytte från 49% till 100% som visas i mobile
-    height: auto;
-    display: block; //la till
-    text-align: center;
-
-}
-.text-container2 {
-    width: 100%;         //bytte från 49% till 100% som visas i mobile
-    height: auto;
-    display: block; //la till
-    text-align: center;
-
-}
-
-.p-heading {
-    font-family: "Montserrat-Regular";
-    font-size: 16px;    //ändrade strl
-    letter-spacing: 2px;
-    font-weight: bold; //la till fet stil
-}
-
-.p-content {
-    font-family: "Montserrat-Light";
-    font-size: 16px;    //ändrade strl
-    letter-spacing: 2px;
-    line-height: 1.5rem;   //la till
-}
-
-.img-container {
-    width: 100%;     //bytte från 50% till 100% som visas i mobile
-    height: auto; //bytte till auto från 100%
-}
-
-.img-container2 {
-    width: 100%;    //bytte från 50% till 100% som visas i mobile
-    height: auto;   //bytte till auto från 100%
-}
-
-//ABOUT SECTION
-
-.section-about {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
-    /*margin-top: 15px;*/ 
-    display: flex;
-    flex-direction: column;
-    display: table;
-    text-align: center;
-}
-
-.about-ingress {
-    font-family: BebasNeue;
-    font-size: 24px;
-    color: #ffc935;
-}
-
-
-//lagt till - info om oss
-.section-workers {
-    position: relative;
-    background-color: black;
-    border-radius: 2%;
-    max-height: auto;
-    display: inline-block;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.info-workers1 {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.info-workers2 {
-    display: flex;
-    flex-direction: column;
-
-
-}
-
-.workers-text {
-    margin: 2rem;
-    color: lightgrey;
-    text-transform: uppercase;
-}
-
-.email {
-    color: #ffc935;
-    text-transform: lowercase;
-}
-
-//CONTACT SECTION
-
-.section-contact {
-    /*height: 350px;*/
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
-    /*margin-top: 15px;*/
-    display: flex;
-    flex-direction: column;
-    display: table;
-    background-color: lightgrey;
-    width: 100%;
-    max-height: auto; //lagt till
-}
-
-.contact-text {
-    width: 49%;
-    height: auto;
-    float: right;
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.section-contact img {
-    max-width: 100%;
-    height: auto;
-    background-size: contain;
-}
-
-.contact-img {
-    margin-top: 40px;
-    margin-left: 40px;
-    margin-bottom: 40px;
-    width: 30%;
-    height: 100%;
-    float: left;
-}
-
-h4 {
-    font-family: "BebasNeue";
-    font-size: 24px;
-    color: #000;
-    letter-spacing: 2px;
-}
-
-
-
-//KEYFRAMES - FADE IN OUT 
+//KEYFRAMES BACKGROUNDPICTURE- FADE IN OUT 
 
 @keyframes FadeInOut {
   0% {
     opacity:1;
   }
-  17% {
+  16% {
     opacity:0;
   }
-  34% {
+  32% {
     opacity:0;
   }
-  51% {
+  48% {
     opacity:0;
   }
-  68% {
+  65% {
     opacity:0;
   }
-  85% {
+  82% {
     opacity:1;
   }
   100% {
@@ -328,171 +258,522 @@ h4 {
   }
 }
 
+/*alla förutom första bilden i headern*/
+header img:nth-child(-n+4) {
 
-header img {
- 
-    -webkit-transition: opacity 2s ease-in-out;
-    -moz-transition: opacity 2s ease-in-out;
-    -o-transition: opacity 2s ease-in-out;
-    transition: opacity 2s ease-in-out;
+    animation: FadeInOut 28s ease-in-out infinite normal;
+
 }
-
 
 
 header img:nth-of-type(1) {
-    -webkit-animation-name: FadeInOut;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 60s;
-    -webkit-animation-direction: normal;
-    -webkit-animation-delay: 60s;
-
-    -moz-animation-name: FadeInOut;
-    -moz-animation-timing-function: ease-in-out;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-duration: 60s;
-    -moz-animation-direction: normal;
-    -moz-animation-delay: 60s;
-
-    -o-animation-name: FadeInOut;
-    -o-animation-timing-function: ease-in-out;
-    -o-animation-iteration-count: infinite;
-    -o-animation-duration: 60s;
-    -o-animation-direction: normal;
-    -o-animation-delay: 60s;
+   
+    animation-delay: 7s;
 
 }
 
-
 header img:nth-of-type(2) {
-    -webkit-animation-name: FadeInOut;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 60s;
-    -webkit-animation-direction: normal;
-    -webkit-animation-delay: 50s;
 
-    -moz-animation-name: FadeInOut;
-    -moz-animation-timing-function: ease-in-out;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-duration: 60s;
-    -moz-animation-direction: normal;
-    -moz-animation-delay: 50s;
+    animation-delay: 14s;
 
-    -o-animation-name: FadeInOut;
-    -o-animation-timing-function: ease-in-out;
-    -o-animation-iteration-count: infinite;
-    -o-animation-duration: 60s;
-    -o-animation-direction: normal;
-    -o-animation-delay: 50s;
 }
 
 header img:nth-of-type(3) {
 
-    -webkit-animation-name: FadeInOut;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 60s;
-    -webkit-animation-direction: normal;
-    -webkit-animation-delay: 40s;
-
-    -moz-animation-name: FadeInOut;
-    -moz-animation-timing-function: ease-in-out;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-duration: 60s;
-    -moz-animation-direction: normal;
-    -moz-animation-delay: 40s;
-
-    -o-animation-name: FadeInOut;
-    -o-animation-timing-function: ease-in-out;
-    -o-animation-iteration-count: infinite;
-    -o-animation-duration: 60s;
-    -o-animation-direction: normal;
-    -o-animation-delay: 40s;
+    animation-delay: 21s;
 }
 
 header img:nth-of-type(4) {
 
-    -webkit-animation-name: FadeInOut;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 60s;
-    -webkit-animation-direction: normal;
-    -webkit-animation-delay: 30s;
+    animation-delay: 28s;
 
-    -moz-animation-name: FadeInOut;
-    -moz-animation-timing-function: ease-in-out;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-duration: 60s;
-    -moz-animation-direction: normal;
-    -moz-animation-delay: 30s;
-
-    -o-animation-name: FadeInOut;
-    -o-animation-timing-function: ease-in-out;
-    -o-animation-iteration-count: infinite;
-    -o-animation-duration: 60s;
-    -o-animation-direction: normal;
-    -o-animation-delay: 30s;
 }
 
+//ALL SECTION
+
+.all-section {
+    width: 90%;
+    margin: 60% 5% 3.125rem 5%;
+    position: relative;
+    display: table cell; // table gör att section-elementen lägger sig på rad
+}
+
+//WORK SECTION 
 
 
-//MEDIA QUERIES
-
-@media screen and (min-width: 768px) {
-    
-   .content-container {
-        display: table;
-        margin-top: 0%;     //la till 0% i desktop
-    }
-
-    .section-work {
-        display: table;
-    }
-    
-
-    .text-container {
-        float: right;
-        width: 49%;
-  
-    }
-
-    .text-container2 {
-        float: left;
-        width: 49%;
-
-    }
-
-    .img-container {
-        float: left;
-        width: 50%;
-
-    }
-
-    .img-container2 {
-        float: right;
-        width: 50%;
-    }
-
-    ul a {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .info-workers1 {
+.section-work {  
+    position: relative;  
+    width: 100%;    
+    max-height: auto;
+    margin: 0.625rem 0 0.625rem 0;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
 }
 
-    .info-workers2 {
+.section-work img {
+    max-width: 100%;
+    height: auto;
+    background-size: contain;
+    @include border-radius(0.625rem);
+}
+
+
+
+.section-work a {
+    text-decoration: none;
+    font-family: "Montserrat Regular";
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    font-size: 2.500rem;
+    letter-spacing: 0.125rem;
+    font-family: "bebasneue", sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+h3 {
+    font-family: "bebasneue";
+    font-size: 1.500rem;
+    letter-spacing: 0.125rem;
+}
+
+
+.color-eye{
+    color: $color-eyesight;
+}
+
+.color-sport{
+    color: $color-olympiaden;
+}
+
+.color-ocean {
+    color: $color-ocean;
+}
+
+.col-color {
+    color: $color-colcompany;
+}
+
+.content-container {
+    height: 100%;
+    width: auto;
+    margin: 1.250rem 0 1.250rem 0;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
 }
+
+.text-container {
+    max-width: auto;       
+    height: 100%;
+    text-align: center;
+
+}
+.text-container2 {
+    max-width: auto;         
+    height: 100%;
+    text-align: center;
 
 }
 
-@media screen and (min-width: 1024px) {
-    
+.p-heading {
+    font-family: "Montserrat Regular";
+    font-size: 0.875em;
+    letter-spacing: 0.125rem;
+    font-weight: bold;
 }
+
+.p-content {
+    text-align: center;
+    font-family: "Montserrat Light";
+    font-size: 0.875em;
+    letter-spacing: 0.125em;
+    line-height: 1.5em;
+}
+
+.img-container {
+    max-width: auto;
+    height: 100%;
+}
+
+.img-container2 {
+    max-width: auto;
+    height: 100%;
+}
+
+
+//HOVER EFFECT - PROJECTS
+
+
+//BLURRY IMAGE - HOVER
+
+.hovereffect {
+  width: 100%;
+  height: auto;  //bytte från 100%
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  background: $color-sand;  
+  @include border-radius(0.625rem);
+}
+
+.hovereffect .overlay {
+  position: absolute;
+  width: 100%;
+  height: auto; //bytte från 100%
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: 3.125rem 1.250rem;
+  @include border-radius(0.625rem);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  max-width: none;
+  width: calc(100% + 1.250em);
+  transition: opacity 0.35s, transform 0.35s;
+  -ms-transition: opacity 0.35s, transform 0.35s;
+  transform: translate3d(-0.625rem,0,0);
+  -ms-transform: translate3d(-0.625rem,0,0);
+  backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  @include border-radius(0.625rem);
+}
+
+.hovereffect:hover img {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  @include border-radius(0.625rem);
+}
+
+//WHITE LINE HOVER
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 2rem;
+  overflow: hidden;
+  padding: 0.5em 0;
+  background-color: transparent;
+}
+
+.hovereffect h2:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 0.125rem;
+  background: #fff;
+  content: '';
+  transition: transform 0.35s;
+  -ms-transition: transform 0.35s;
+  transform: translate3d(-100%,0,0);
+  -ms-transform: translate3d(-100%,0,0);
+}
+
+
+
+.hovereffect:hover h2:after {
+  transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+
+
+
+//UPPER TEXT HOVER
+
+.hovereffect h2 {
+  color: #FFF;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transition: opacity 0.35s, transform 0.35s;
+  -ms-transition: opacity 0.35s, transform 0.35s;
+  transform: translate3d(-100%,0,0);
+  -ms-transform: translate3d(-100%,0,0);
+}
+
+
+.hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+
+ //LOWER LINK HOVER
+
+.hovereffect a, .hovereffect p { 
+  color: #FFF;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transition: opacity 0.35s, transform 0.35s;
+  -ms-transition: opacity 0.35s, transform 0.35s;
+  transform: translate(100%,0);                 //ändrade för att det ska fungera i explorer också
+  -ms-transform: translate(100%,0);             //ändrade för att det ska fungera i explorer också
+}
+
+.hovereffect:hover a, .hovereffect:hover p {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+
+/* TO COLOR LINKS IN HOVER */
+
+.section-work .content-container:nth-of-type(1) a:hover {
+    color: $color-olympiaden;
+}
+
+.section-work .content-container:nth-of-type(2n) a:hover {
+    color: $color-eyesight;
+}
+
+.section-work .content-container:nth-of-type(3n) a:hover {
+    color: $color-ocean;
+}
+
+.section-work .content-container:nth-of-type(4n) a:hover {
+    color: $color-colcompany;
+}
+
+
+
+.img-hover {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+//ABOUT SECTION
+
+.section-about {
+    margin: 0.625rem 0 0.625rem 0;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    display: table;
+    text-align: center;
+}
+
+.about-ingress {
+    font-family: "bebasneue";
+    font-size: 1.500rem;
+    color: $color-yellow;
+}
+h6 {    //la till denna, annars blir det warning när man validerar
+    display: none;
+}
+
+
+//INFO OM OSS
+.section-workers {
+    position: relative;
+    @include border-radius(10px);
+    max-height: auto;
+    width: 80%;
+    display: inline-block;
+    margin: 1.250rem 0 0.625rem 0;
+}
+
+.info-workers1, .info-workers2 {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.workers-text {
+    margin: 2rem;
+    color: black;
+    font-family: "Montserrat Regular";
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.workers-text p:nth-of-type(1) {
+    font-family: "bebasneue";
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color-yellow;
+    letter-spacing: 0.1rem;
+}
+
+.email {
+    color: black;
+    text-transform: uppercase;
+}
+
+//CONTACT SECTION
+
+.section-contact {
+    margin: 0.625rem 0 0.625rem 0;
+    position: relative;
+    display: table;
+    background-color: lightgrey;
+    width: 100%;
+}
+
+.contact-text {
+    width: 100%;
+    float: right;
+    text-align: center;
+    margin: 2.500rem 0 2.500rem 0;
+}
+
+
+.contact-img {
+    position: relative;
+    margin: 2.500rem 0 2.500rem 2.500rem;
+    width: 100%;
+    float: left;
+
+}
+
+
+.section-contact img {   
+    width: 80%;
+    background-size: contain;
+}
+
+h4 {
+    font-family: "bebasneue";
+    font-size: 1.500rem;
+    color: #000;
+    letter-spacing: 0.125rem;
+}
+
+//MAP-ICON ANIMATION
+
+
+div.map-icon {
+    position: absolute;
+    width: 10%;
+    left: 6.250rem;
+    bottom: 6.250rem;
+
+
+   -webkit-animation: jump 1.5s ease 0s infinite normal;
+    animation: jump 1.5s ease 0s infinite normal;
+}
+
+.map-icon img {
+    width: auto;
+    height: 100%;
+}
+
+
+
+@keyframes jump {
+  0%{
+    transform: translateY(0);
+  }
+  20%{
+    transform: translateY(0);
+  }
+  40%{
+    transform: translateY(-30px);
+  }
+  50%{
+    transform: translateY(0);
+  }
+  60%{
+    transform: translateY(-15px);
+  }
+  80%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+
+
+// FOOTER SECTION
+
+.section-footer {
+  position: absolute;
+  height: 12.5rem;
+  width: 100%;
+  margin-top: 0.625rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  display: table;
+  background-color: $color-yellow; 
+}
+
+
+.footer-links {
+    float: right;
+    margin-top: 8.4375rem;   
+}
+
+
+.footer-links img {
+    width: 1.5em;
+    padding: 0.625rem;
+    display: inline;
+    float: right; 
+    height: 100%;
+    max-width: auto;          
+}
+
+
+.form {
+    position: absolute;
+    text-align: center;
+    width: 80%;
+    left: 20%;  
+}
+
+
+
+.form input {
+    border: none;
+    color: transparent;
+    background: url('../img/right-arrow.svg') no-repeat;
+    height: 2.500em;
+    width: 1.875em;
+    cursor: pointer;
+    margin: 1.250em 0 0 -3.750em;
+}
+
+#email {
+    border: none;
+    padding: 0.750em 1.250em 0.813em;
+    background: lightgrey;
+    font-size: 24px;
+    color: #011931;
+    height: auto;
+    display: inline;
+    cursor: text;
+    width: 60%;    
+}
+
+.fotsand {
+    color: white;
+    font-family: "Montserrat";
+    position: absolute;
+    margin-top: 9.0625em;
+    left: 0.6em;
+    letter-spacing: 0.13em;
+}
+
+
+@import "responsive";
